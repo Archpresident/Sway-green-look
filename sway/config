@@ -298,6 +298,6 @@ bindsym $mod+F2 exec --no-startup-id another-swayrst load workspace2
 bindsym $mod+F4 exec --no-startup-id another-swayrst load workspace4
 
 #Applicazioni su workspace specifici
-assign [class="steam"] 3
+assign [class="steam"] 4
 assign [app_id="org.coolercontrol.CoolerControl"] 4
-assign [class="heroic"] 3
+assign [class="heroic"] 4
