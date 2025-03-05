@@ -1,0 +1,108 @@
+#!/bin/bash
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+##Usura cpu
+[{ "full_text" : "" , "color" : "\#002990" },
+{ "full_text" : "Cpu1 ${cpu cpu1}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu2 ${cpu cpu2}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu3 ${cpu cpu3}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu4 ${cpu cpu4}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu5 ${cpu cpu5}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu6 ${cpu cpu6}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu7 ${cpu cpu7}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu8 ${cpu cpu8}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu9 ${cpu cpu9}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu10 ${cpu cpu10}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu11 ${cpu cpu11}%", "color" : "\#1E5B53"},
+{ "full_text" : "Cpu12 ${cpu cpu12}%", "color" : "\#1E5B53"},
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Cpu ${freq_g}" , "color" : "\#1E5B53"},
+##RAM
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Ram ${mem}" , "color" : "\#1E5B53" },
+##Sensori Dischi
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "HddWD ${execi 10 hddtemp /dev/sda | cut -c 35-36 }° C" , "color" : "\#1E5B53" },
+#{ "full_text" : "Ssd ${execi 10 hddtemp /dev/sdb | cut -c 31-32 }° C" , "color" : "\#1B8D3A" },
+{ "full_text" : "PNY ${execi 10 hddtemp /dev/sdc | cut -c 31-33 }° C" , "color" : "\#1E5B53" },
+##Sensori e temperatura
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Cpu ${execi 1 sensors | grep -Pio 'Tctl.*?\+\K[0-9]+'} °C" , "color" : "\#1E5B53" },
+{ "full_text" : "Edg ${execi 1 sensors | grep -Pio 'edge.*?\+\K[0-9]+'} °C" , "color" : "\#1E5B53" },
+{ "full_text" : "Jun ${execi 1 sensors | grep -Pio 'junction.*?\+\K[0-9]+'} °C" , "color" : "\#1E5B53" },
+##Filesystem
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Root ${fs_used_perc /} %" , "color" : "\#1E5B53" }, 
+{ "full_text" : "|" , "color" : "\#1E5B53" },
+#{ "full_text" : "Home ${fs_used_perc /home} %" , "color" : "\#1E5B53" }, 
+#{ "full_text" : "|" , "color" : "\#1E5B53" },
+{ "full_text" : "Wd ${fs_used_perc /home/ale/hddwd} %" , "color" : "\#1E5B53" },
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Pny ${fs_used_perc /home/ale/pnyssd} %" , "color" : "\#1E5B53" }, 
+{ "full_text" : "|" , "color" : "\#1E5B53" },
+{ "full_text" : "King ${fs_used_perc /home/ale/kingssd} %" , "color" : "\#1E5B53" },
+{ "full_text" : "|" , "color" : "\#1E5B53" },
+{ "full_text" : "Nvme ${fs_used_perc /home/ale/nvme-king} %" , "color" : "\#1E5B53" },
+##Network
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Down${downspeed enp42s0}" , "color" : "\#1E5B53"},
+{ "full_text" : "${totaldown enp42s0}" , "color" : "\#1E5B53"},
+{ "full_text" : "Up ${upspeed enp42s0}" , "color" : "\#1E5B53"},
+{ "full_text" : "${totalup enp42s0}" , "color" : "\#1E5B53"},
+##Aggiornamenti
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "Pacman ${execpi 400 checkupdates | wc -l }" , "color" : "\#1E5B53" },
+{ "full_text" : "Aur ${execpi 1900 yay -Qua | wc -l}" , "color" : "\#1E5B53" },
+##Mail
+#{"full_text" : " | " , "color" : "\#1E5B53" },
+#{ "full_text" : "Youtube ${execpi 200 cat /tmp/youtube}" , "color" : "\#9235FD" },
+#{ "full_text" : "AleGmail ${execpi 180 cat /tmp/ale} " , "color" : "\#1E5B53" },
+###MOc
+{ "full_text" : " | " , "color" : "\#1E5B53" },
+{ "full_text" : "${uptime}  " , "color" : "\#1E5B53"},
+],
+#{ "full_text" : " ${scroll 15 ${moc_song}}" , "color" : "\#E0FF63" },
+#{ "full_text" : " ${moc_state} " , "color" : "\#FF6363" },
+#{ "full_text" : " ${moc_timeleft} ", "color" : "\#63FF7A" },
+
+###Data Time
+#{ "full_text" : " | ","color" : "\#1E5B53" },
+#{ "full_text" :"${execpi 20000 date +%a}","color" : "\#1E5B53"},
+#{ "full_text" : "${execpi 20000 date +%d-%m} ","color" : "\#1E5B53" }],
+#{ "full_text" : "${time %H:%M  } ","color" : "\#1E5B53"}],
+######MPD
+#{ "full_text" : "${execi 1 ~/.conky/conky-mpd/cover.sh}"}],
