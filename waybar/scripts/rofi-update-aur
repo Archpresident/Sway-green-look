@@ -1,0 +1,13 @@
+#!/bin/bash
+
+aggiornamentiaur=`yay -Qua`
+
+if [  -z "$aggiornamentiaur" ]
+	then
+	niente=`echo "Non ci sono aggiornamenti"`
+	echo $niente | rofi -dmenu -location 3 -theme-str 'window {width: 20%;} listview {lines: 10;}' -mesg
+fi
+if [ -n "$aggiornamenti-aur" ]
+	then
+	echo $aggiornamentiaur | rofi -dmenu -location 3 -theme-str 'window {width: 20%;} listview {lines: 10;}' -mesg
+fi

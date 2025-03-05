@@ -1,0 +1,13 @@
+#!/bin/bash
+
+aggiornamenti=$(checkupdates --nocolor)
+
+if [  -z "$aggiornamenti" ]
+	then
+	niente=`echo "Non ci sono aggiornamenti"`
+	echo $niente | rofi -dmenu -location 3 -theme-str 'window {width: 20%;} listview {lines: 10;}' -mesg
+fi
+if [ -n "$aggiornamenti" ]
+	then
+	echo "$aggiornamenti" | rofi -dmenu -location 3 -theme-str 'window {width: 20%;} listview {lines: 10;}' -mesg
+fi

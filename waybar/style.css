@@ -1,0 +1,271 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Freemono;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background: #000B04;
+}
+
+
+#workspaces {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+}
+
+#workspaces button {
+    transition: none;
+    color: #1E5B53;
+    background: transparent;
+    padding: 5px;
+    font-size: 12px;
+}
+
+#workspaces button.persistent {
+    color: #1E5B53;
+    font-size: 12px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: rgba(58, 58, 58, 0.8);
+    background: #1E5B53;
+}
+
+#workspaces button.focused {
+    color: white;
+}
+
+#cava {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+    background: #000B04;
+}
+
+
+#window {
+    padding-left: 10px;
+    padding-right: 50px;
+    transition: none;
+    color: #1E5B53;
+    background: #000B04;
+}
+
+
+#mpd {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+    background: #000B04;
+}
+
+#cpu {
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 4px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border-top: 1px solid #000B04;
+    border-left: 1px solid #000B04;
+    border-bottom: 1px solid #000B04;
+
+}
+
+#custom-mem {
+    margin-right: 8px;
+    padding-left: 4px;
+    padding-right: 10px;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border-top: 1px solid #000B04;
+    border-right: 1px solid #000B04;
+    border-bottom: 1px solid #000B04;
+}
+
+#network {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 3px;
+    border-radius: 10px 10px 10px 10px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border: 1px solid #000B04;
+
+}
+
+
+#keyboard-state {
+    padding-left: 12px;
+    padding-right: 4px;
+    transition: none;
+    color: #1E5B53;
+}
+
+#keyboard-state label.locked{
+    background: rgba(58, 58, 58, 0.0);
+    color: #FF2929;
+}
+
+
+#custom-clipboard {
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: none;
+    color: #1E5B53;
+}
+
+
+#custom-notification {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 14px;
+    transition: none;
+    color: #1E5B53;
+}
+
+#custom-weather {
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+}
+
+
+#tray {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+}
+
+
+#custom-weather {
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+}
+
+#pulseaudio {
+    margin-right: 0px;
+    padding-left: 6px;
+    padding-right: 0px;
+    transition: none;
+    color: #1E5B53;
+}
+
+#pulseaudio.muted {
+    background-color: #BF4040;
+    color: #020202;
+}
+#pulseaudio-slider {
+    margin-right: 8px;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+#pulseaudio-slider slider {
+  background: #17312E;
+  background-color: transparent;
+  box-shadow: none;
+  margin-right: 7px;
+}
+
+#pulseaudio-slider trough {
+    min-height: 1px;
+    min-width: 60px;
+    border-radius: 5px;
+    background-color: #47A799;
+}
+#pulseaudio-slider highlight {
+    min-width: 2px;
+    border-radius: 5px;
+    background-color: #17312E;
+    border: 1px solid #2e6b62;
+}
+
+#clock {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+    color: #1E5B53;
+}
+
+#custom-cpusensor {
+    padding-left: 12px;
+    padding-right: 4px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border-left: 1px solid #000B04;
+    border-top: 1px solid #000B04;
+    border-bottom: 1px solid #000B04;
+}
+
+#custom-gpusensoredg {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 0px 0px 0px 0px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border-top: 1px solid #000B04;
+    border-bottom: 1px solid #000B04;
+}
+
+
+#custom-gpusensorjun {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 14px;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border-right: 1px solid #000B04;
+    border-top: 1px solid #000B04;
+    border-bottom: 1px solid #000B04;
+}
+
+#custom-uptime {
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+    transition: none;
+    color: #1E5B53;
+    background: rgba(0, 11, 4, 0.5);
+    border: 1px solid #000B04;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #1E5B53;
+        color: #000000;
+    }
+}

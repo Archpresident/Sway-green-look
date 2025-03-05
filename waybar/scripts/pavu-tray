@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hyprctl dispatch movewindowpixel "exact 1900 35,title:Visualizer" 

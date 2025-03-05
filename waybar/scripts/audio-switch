@@ -1,0 +1,24 @@
+#!/bin/bash
+
+asus=$(pacmd list-sinks | grep -ie name.*hdmi.*\> | sed -e 's/name.*<//' -e 's/>//')
+realtek=$(pacmd list-sinks | grep -ie name.*analog.*\> | sed -e 's/name.*<//' -e 's/>//')
+gpu="Audio su 1060"
+mobo="Audio interno"
+attiva=$(cat $HOME/.bin/audio_switch/cache/audio)
+
+
+if [ "$attiva" != "$realtek" ]
+   then
+   pacmd set-default-sink "$realtek"
+   echo "$realtek" > $HOME/.bin/audio_switch/cache/audio
+   notify-send -h string:x-canonical-private-synchronous:sys-notify -i /home/ale/Immagini/icone/volume-dunst.png  -a SoundSwitch "Audio passato sulla mobo" 
+fi
+
+if [ "$attiva" != "$asus" ]
+   then
+   pacmd set-default-sink "$asus"
+   echo "$asus" > $HOME/.bin/audio_switch/cache/audio  
+   notify-send -h string:x-canonical-private-synchronous:sys-notify -i /home/ale/Immagini/icone/volume-dunst.png  -a SoundSwitch "Audio passato sulla 3060"    
+fi
+
+paplay /home/ale/Musica/sounds/desktop-login.oga
